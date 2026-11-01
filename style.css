@@ -12,3 +12,107 @@ body.lightbox-open{overflow:hidden}
 .lightbox-caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#c7a66b;font-size:10px;letter-spacing:2px}
 .lightbox button:hover{background:#c7a66b;color:#171614}
 @media(max-width:600px){.lightbox{padding:60px 16px 55px}.lightbox-image{max-height:calc(100vh - 135px);max-width:100%}.lightbox-prev,.lightbox-next{width:36px;height:48px;font-size:30px;background:rgba(25,23,20,.72)}.lightbox-prev{left:5px}.lightbox-next{right:5px}.lightbox-close{right:12px;top:12px}}
+
+/* Responsive refinements */
+body.menu-open{overflow:hidden}
+img{max-width:100%}
+
+@media (max-width:1200px) {
+  .hero{padding-left:8vw;padding-right:8vw}
+  .section{padding-left:8vw;padding-right:8vw}
+  .hero-bottom{left:8vw;right:8vw}
+  .photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media (min-width:801px) and (max-width:992px) {
+  .site-header{padding:0 5vw}
+  .hero{grid-template-columns:1fr .9fr;padding-left:7vw;padding-right:7vw}
+  .hero h1{font-size:clamp(54px,6.5vw,76px)}
+  .section{padding-left:7vw;padding-right:7vw}
+  .photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media (max-width:800px) {
+  .site-header{position:absolute}
+  .menu-toggle{position:relative;z-index:2;min-width:44px;min-height:44px;padding:8px;cursor:pointer}
+  nav{z-index:1;box-shadow:0 14px 28px rgba(0,0,0,.24)}
+  nav a{padding:4px 0}
+  .hero{width:100%;padding-left:8vw;padding-right:8vw}
+  .hero-copy{min-width:0}
+  .hero-intro{max-width:34rem}
+  .hero-actions{flex-wrap:wrap;gap:22px}
+  .hero-visual{width:100%;max-width:34rem;margin:0 auto}
+  .hero-frame{width:min(78%,390px)}
+  .vertical-label{right:-2px}
+  .section h2{max-width:100%;overflow-wrap:break-word}
+  .about-text{max-width:none}
+  .profile-card{min-width:0}
+  .profile-card strong{overflow-wrap:anywhere}
+  .skills-grid{min-width:0}
+  .skill-block>div{min-width:0}
+  .gallery-heading{gap:18px}
+  .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .photo-card{aspect-ratio:4/5}
+  .contact-content{max-width:100%}
+  .contact h2{max-width:100%;overflow-wrap:break-word}
+  .phone-link{font-size:clamp(22px,6vw,26px)}
+  footer{row-gap:14px}
+}
+
+@media (min-width:601px) and (max-width:800px) {
+  .photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media (max-width:600px) {
+  .site-header{padding:0 5vw}
+  .hero{padding:118px 7vw 78px;gap:42px}
+  .hero h1{font-size:clamp(50px,14vw,65px);letter-spacing:-1.5px}
+  .hero-intro{font-size:14px;line-height:1.75}
+  .hero-actions{align-items:flex-start;flex-direction:column;margin-top:28px}
+  .button{min-height:48px;display:inline-flex;align-items:center}
+  .hero-note{margin-top:34px}
+  .hero-visual{height:min(112vw,440px)}
+  .hero-stamp{width:72px;height:72px;font-size:10px}
+  .hero-bottom{bottom:22px;left:7vw;right:7vw}
+  .hero-bottom span:last-child{display:none}
+  .section{padding:72px 7vw}
+  .section-kicker{margin-bottom:30px}
+  .section h2{font-size:clamp(40px,11vw,56px);letter-spacing:-1px}
+  .about-grid{gap:28px}
+  .about-text .lead{font-size:20px}
+  .profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profile-card{padding:22px 14px}
+  .profile-card:first-child,.profile-card:nth-child(3){padding-left:0}
+  .profile-card strong{font-size:clamp(17px,5vw,22px)}
+  .skills-grid{margin-top:42px}
+  .gallery-heading{margin-bottom:30px}
+  .gallery-count{align-self:flex-start}
+  .photo-grid{gap:10px}
+  .photo-card figcaption{padding:28px 10px 10px;font-size:9px}
+  .photo-card figcaption span{font-size:7px}
+  .contact{min-height:0}
+  .contact:after{width:290px;height:290px;right:-175px;top:90px}
+  .contact h2{font-size:clamp(42px,11vw,62px)}
+  .contact-location{margin-top:34px;max-width:18rem;line-height:1.6}
+  .contact-mark{right:7vw;bottom:28px;font-size:42px}
+  footer{padding:22px 7vw;display:grid;grid-template-columns:1fr auto;align-items:center}
+  footer span:nth-child(2){grid-column:1/-1;grid-row:2}
+}
+
+@media (max-width:480px) {
+  .hero{padding-top:110px}
+  .hero-visual{height:108vw;max-height:410px}
+  .hero-frame{width:82%;padding:9px}
+  .image-placeholder{inset:9px}
+  .vertical-label{font-size:8px;letter-spacing:2px}
+  .hero-stamp{left:0;bottom:6%}
+  .profile-card{padding:20px 10px}
+  .profile-card span,.profile-card small{font-size:8px;letter-spacing:1px}
+  .profile-card strong{margin:13px 0 7px}
+  .skill-block{gap:13px}
+  .skill-block h3{font-size:18px}
+  .skill-block p{font-size:11px}
+  .photo-grid{gap:8px}
+  .phone-link{font-size:21px}
+  footer{font-size:8px;letter-spacing:1px}
+}
